@@ -5,11 +5,11 @@
 class Engine
 {
 public:
-    double input, output;
+    double work, heat;
     Engine(double a, double b)
     {
-        input = a;
-        output = b;
+        work = a;
+        heat = b;
     }
     virtual double GetEfficiency()
     {
@@ -25,7 +25,7 @@ public :
     double GetEfficiency()
     {
         std::cout << "\n Internal Combustine Engine Efficiency";
-        return input / output;
+        return work / heat * 100;
     }
 };
 
@@ -36,7 +36,7 @@ public:
     double GetEfficiency()
     {
         std::cout << "\n External Combustine Engine Efficiency \t";
-        return input / output;
+        return work / heat * 100;
     }
 };
 
@@ -47,7 +47,7 @@ public:
     double GetEfficiency()
     {
         std::cout << "\n Petrol Engine Efficiency \t";
-        return input / output;
+        return work / heat * 100;
     }
 };
 
@@ -58,7 +58,7 @@ public:
     double GetEfficiency()
     {
         std::cout << "\n Diesel Engine Efficiency \t";
-        return input / output;
+        return work / heat * 100;
     }
 };
 
@@ -69,7 +69,7 @@ public:
     double GetEfficiency()
     {
         std::cout << "\n Stream Engine Efficiency \t";
-        return input / output;
+        return work / heat * 100;
     }
 };
 
@@ -84,9 +84,9 @@ int main()
     if (num == 1)
     {
         int in, out;
-        std::cout << "\n Enter the input of the Internal Combustine Engine";
+        std::cout << "\n Enter the Work done By the Internal Combustine Engine";
         std::cin >> in;
-        std::cout << "\n Enter the output of the Internal Combustine Engine ";
+        std::cout << "\n Enter the Heat of the Internal Combustine Engine ";
         std::cin >> out;
         InternalCombustineEngine i(in, out);
         e = &i;
@@ -95,9 +95,9 @@ int main()
     else if (num == 2) 
     {
         int in, out;
-        std::cout << "\n Enter the input of the External Combustine Engine";
+        std::cout << "\n Enter the Work done By the External Combustine Engine";
         std::cin >> in;
-        std::cout << "\n Enter the output of the External Combustine Engine";
+        std::cout << "\n Enter the  Heat of the External Combustine Engine";
         std::cin >> out;
         ExternalCombustineEngine c(in, out);
         e = &c;
@@ -106,9 +106,9 @@ int main()
     else if (num == 3)
     {
         int in, out;
-        std::cout << "\n Enter the input of the Petrol Engine";
+        std::cout << "\n Enter the Work done By the Petrol Engine";
         std::cin >> in;
-        std::cout << "\n Enter the output of the  Petrol Engine";
+        std::cout << "\n Enter the  Heat of the  Petrol Engine";
         std::cin >> out;
         PetrolEngine p(in, out);
         e = &p;
@@ -117,9 +117,9 @@ int main()
     else if (num == 4)
     {
         int in, out;
-        std::cout << "\n Enter the input of the Diesel Engine";
+        std::cout << "\n Enter the Work done By the Diesel Engine";
         std::cin >> in;
-        std::cout << "\n Enter the output of the  Diesel Engine";
+        std::cout << "\n Enter the  Heat of the  Diesel Engine";
         std::cin >> out;
         DieselEngine d(in, out);
         e = &d;
@@ -128,9 +128,9 @@ int main()
     else if (num == 5)
     {
         int in, out;
-        std::cout << "\n Enter the input of the Stream Engine";
+        std::cout << "\n Enter the Work done By the Stream Engine";
         std::cin >> in;
-        std::cout << "\n Enter the output of the  Stream Engine";
+        std::cout << "\n Enter the  Heat of the  Stream Engine";
         std::cin >> out;
         StreamEngine s(in, out);
         e = &s;
